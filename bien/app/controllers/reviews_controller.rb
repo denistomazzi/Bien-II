@@ -21,10 +21,15 @@ def create
   @review = Review.new(form_params)
 
   # save this to the database
-  @review.save
+  if @review.save
+     redirect_to root_path 
 
-  # redirect back to the homepage 
-  redirect_to root_path 
+  else 
+
+    # show the view for new.html.erb
+    render "new"
+  end
+
 end
 
 def show 
@@ -59,10 +64,13 @@ def update
     @review = Review.find(params[:id])
 
     # update with the new info from the form
-    @review.update(form_params)
+    if @review.update(form_params)
     
-    # redirect somewhere new 
-    redirect_to review_path(@review)
+        # redirect somewhere new 
+        redirect_to review_path(@review)
+    else 
+      render "edit"
+    end
 end 
 
 def form_params 

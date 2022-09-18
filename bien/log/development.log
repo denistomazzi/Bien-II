@@ -797,3 +797,149 @@ Processing by ReviewsController#edit as HTML
 Completed 200 OK in 43ms (Views: 37.4ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/reviews/3" for ::1 at 2022-09-18 12:03:14 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/denistomazzi/.rbenv/versions/2.4.4/lib/ruby/gems/2.4.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:32
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 508ms (Views: 452.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/reviews/3" for ::1 at 2022-09-18 12:13:06 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mReview Load (1.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:37
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 95ms (Views: 65.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/reviews/3/edit" for ::1 at 2022-09-18 12:13:08 -0500
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:58
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (34.7ms)
+  Rendered reviews/edit.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 87ms (Views: 78.8ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/reviews/3" for ::1 at 2022-09-18 12:13:11 -0500
+Processing by ReviewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LYlLLFx9CymhLU+5cZHeA6WGbrP/wuPjN2h//BksuFoqTu4RjaKPQs77N8N9zCE68ZthvNjRGQf9GIIg7gUeFg==", "review"=>{"title"=>"testfewfew", "body"=>"ttteewfewf", "score"=>"42"}, "commit"=>"Save review", "id"=>"3"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:64
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:67
+Redirected to http://localhost:3000/reviews/3
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/reviews/3" for ::1 at 2022-09-18 12:13:11 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:37
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 48ms (Views: 43.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-09-18 12:13:54 -0500
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:4
+  Rendered reviews/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 62ms (Views: 52.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews/new" for ::1 at 2022-09-18 12:14:00 -0500
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (2.3ms)
+  Rendered reviews/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 43ms (Views: 35.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for ::1 at 2022-09-18 12:14:04 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g5gOdU5Xldl83+dAqB5FpccnnYioMqc6km2jtJhxnJQ6+nZnTqQdya5zbKqvQJ2zawnXKWw9sBdYnTWZu0QosQ==", "review"=>{"title"=>"", "body"=>"", "score"=>"44"}, "commit"=>"Save review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:24
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (3.7ms)
+  Rendered reviews/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 41ms (Views: 35.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews" for ::1 at 2022-09-18 12:35:35 -0500
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:4
+  Rendered reviews/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 72ms (Views: 66.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/reviews/new" for ::1 at 2022-09-18 12:35:39 -0500
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (4.5ms)
+  Rendered reviews/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 64ms (Views: 57.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for ::1 at 2022-09-18 12:35:45 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"djfXO21z9TzpVr7h3J7h24fu/1TQv6B84UYRi56Z7tzPVa8pbYB9LDv6NQvbwDnNK8C19RSwt1Ertoemvaxa+Q==", "review"=>{"title"=>"", "body"=>"", "score"=>""}, "commit"=>"Save review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:24
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (3.9ms)
+  Rendered reviews/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 47ms (Views: 40.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/reviews" for ::1 at 2022-09-18 12:36:20 -0500
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:4
+  Rendered reviews/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 56ms (Views: 48.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/new" for ::1 at 2022-09-18 12:36:22 -0500
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (2.4ms)
+  Rendered reviews/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 47ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for ::1 at 2022-09-18 12:36:25 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lvwedQElHB0HlU1bY4VbaYxRXHkB4/xo4VApdz/R5dEvnmZnAdaUDdU5xrFk24N/IH8W2MXs60UroL9aHORR9A==", "review"=>{"title"=>"", "body"=>"", "score"=>""}, "commit"=>"Save review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:24
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:24
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (5.1ms)
+  Rendered reviews/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 51ms (Views: 43.7ms | ActiveRecord: 0.3ms)
+
+
