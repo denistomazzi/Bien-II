@@ -943,3 +943,48 @@ Processing by ReviewsController#create as HTML
 Completed 200 OK in 51ms (Views: 43.7ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/reviews" for ::1 at 2022-09-18 12:49:47 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/denistomazzi/.rbenv/versions/2.4.4/lib/ruby/gems/2.4.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:4
+  Rendered reviews/index.html.erb within layouts/application (293.0ms)
+Completed 200 OK in 697ms (Views: 669.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/reviews/3-testfewfew" for ::1 at 2022-09-18 12:49:51 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"3-testfewfew"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:37
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 40ms (Views: 31.4ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddNewInfoToReviews (20220922014451)
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddNewInfoToReviews (20220922014451)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "reviews" ADD "phone_number" varchar[0m
+  ↳ db/migrate/20220922014451_add_new_info_to_reviews.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "reviews" ADD "ambiance" varchar[0m
+  ↳ db/migrate/20220922014451_add_new_info_to_reviews.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (7.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220922014451"]]
+  ↳ bin/rails:9
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
