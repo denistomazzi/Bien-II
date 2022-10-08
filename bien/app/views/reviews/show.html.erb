@@ -16,6 +16,22 @@
 
 <% end %>
 
+<% if @review.price.present? %>
+
+<div class="price">
+   Price: <%= @review.price %> / 10
+</div>
+
+<% end %>
+
+<% if @review.cuisine.present? %>
+
+<div class="ambiance">
+   Cuisine: <%= @review.cuisine %> / 10
+</div>
+
+<% end %>
+
 <div class="body">
 
   <%= simple_format @review.body %>

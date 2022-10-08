@@ -988,3 +988,121 @@ Migrating to AddNewInfoToReviews (20220922014451)
   ↳ bin/rails:9
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2022-10-02 16:59:28 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/denistomazzi/.rbenv/versions/2.4.4/lib/ruby/gems/2.4.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/denistomazzi/Desktop/Rails II/bien/app/controllers/reviews_controller.rb:89: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/reviews_controller.rb:89: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2022-10-02 17:00:08 -0500
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:12
+  Rendered reviews/index.html.erb within layouts/application (142.1ms)
+Completed 200 OK in 605ms (Views: 591.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2022-10-02 17:00:12 -0500
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:12
+  Rendered reviews/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-10-02 17:00:13 -0500
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:12
+  Rendered reviews/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 38ms (Views: 34.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-10-02 17:02:19 -0500
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:13
+  Rendered reviews/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?price=1" for ::1 at 2022-10-02 17:02:23 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"1"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", 1]]
+  ↳ app/views/reviews/index.html.erb:13
+  Rendered reviews/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 48ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?price=1" for ::1 at 2022-10-02 17:03:00 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"1"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", 1]]
+  ↳ app/views/reviews/index.html.erb:12
+  Rendered reviews/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 31ms (Views: 27.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/?price=1" for ::1 at 2022-10-02 17:03:18 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"1"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", 1]]
+  ↳ app/views/reviews/index.html.erb:12
+  Rendered reviews/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 78ms (Views: 74.5ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddLocationToReviews (20221002222142)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "reviews" ADD "address" text[0m
+  ↳ db/migrate/20221002222142_add_location_to_reviews.rb:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "reviews" ADD "latitude" float[0m
+  ↳ db/migrate/20221002222142_add_location_to_reviews.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "reviews" ADD "longitude" float[0m
+  ↳ db/migrate/20221002222142_add_location_to_reviews.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221002222142"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2022-10-02 17:24:53 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/denistomazzi/.rbenv/versions/2.4.4/lib/ruby/gems/2.4.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:16
+  Rendered reviews/index.html.erb within layouts/application (181.7ms)
+Completed 200 OK in 447ms (Views: 425.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2022-10-08 12:41:17 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/denistomazzi/.rbenv/versions/2.4.4/lib/ruby/gems/2.4.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:25
+  Rendered reviews/index.html.erb within layouts/application (234.6ms)
+Completed 200 OK in 729ms (Views: 679.8ms | ActiveRecord: 1.4ms)
+
+
